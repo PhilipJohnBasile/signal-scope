@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>rwe-assistant Signals</title>
+  <link rel="stylesheet" href="/style.css" />
+  <script src="/htmx.min.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Research Signals (FAERS + PubMed)</h1>
+    <p class="disclaimer">Exploratory only – not medical advice.</p>
+    <form id="search" hx-get="/signals" hx-target="#results" hx-trigger="submit">
+      <label for="drug">Drug</label>
+      <input type="text" id="drug" name="drug" placeholder="IMATINIB" required />
+      <button type="submit">Load Signals</button>
+    </form>
+  </header>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Drug</th>
+          <th>Event</th>
+          <th>Quarter</th>
+          <th>ROR*</th>
+          <th>95% CI</th>
+          <th>Literature</th>
+          <th>Trend z</th>
+          <th>Score</th>
+        </tr>
+      </thead>
+      <tbody id="results" hx-get="/signals" hx-trigger="load">
+        <tr><td colspan="8">Enter a drug name to view signals.</td></tr>
+      </tbody>
+    </table>
+  </main>
+  <footer>
+    <p>* Empirical Bayes shrunken ROR. Use for hypothesis generation only.</p>
+  </footer>
+</body>
+</html>

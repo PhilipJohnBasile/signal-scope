@@ -1,0 +1,64 @@
+:root {
+  color-scheme: light dark;
+  --bg: #0f172a;
+  --fg: #e2e8f0;
+  --accent: #38bdf8;
+}
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 2rem;
+  background: var(--bg);
+  color: var(--fg);
+}
+header {
+  display: grid;
+  gap: 0.75rem;
+}
+h1 {
+  margin: 0;
+}
+.disclaimer {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+form {
+  display: flex;
+  gap: 0.5rem;
+}
+input, button {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.4rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+}
+button {
+  background: var(--accent);
+  color: #0f172a;
+  font-weight: 600;
+  cursor: pointer;
+}
+main {
+  margin-top: 1.5rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(15, 23, 42, 0.4);
+}
+th, td {
+  padding: 0.75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  text-align: left;
+}
+th {
+  background: rgba(148, 163, 184, 0.1);
+}
+tr:hover {
+  background: rgba(56, 189, 248, 0.12);
+}
+footer {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
